@@ -21,9 +21,12 @@
 
 
                      <!-- Dropdown for Signed-in User -->
+                     <!-- if naka set $_session[fullname], dun lang lalabas user -->
+                      <?php
+                      if (isset($_SESSION["fullname"])){ ?>
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            JohnDoe <!-- Replace with dynamic username -->
+                            <?php echo $_SESSION["fullname"]; ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="userDropdown">
                             <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
@@ -32,7 +35,7 @@
                             <li><a class="dropdown-item" href="logout.html">Logout</a></li>
                         </ul>
                     </li>
-                   
+                    <?php } ?>
                 </ul>
             </div>
         </div>
